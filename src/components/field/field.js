@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './field.css';
+import './field.css';
 
 export default(props) => (
   <div className='field'>

@@ -24,8 +24,12 @@
     margin: auto;
     text-align: center;
     width: 100%;
-    margin-top: 30%; }
+    margin-top: 30%;
+    font-size: larger;
+    font-weight: bold; }
 
 .player-name {
   text-align: center;
-  margin-top: 5px; }
+  margin-top: 5px;
+  color: white;
+  font-weight: bold; }

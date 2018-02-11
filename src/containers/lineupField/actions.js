@@ -16,7 +16,7 @@ export function getLineupSuccess(data) {
 export function getLineupFailed(error) {
   return {
     type: INITIAL_LINEUP_FAILED,
-    payload: error
+    error: error
   };
 }
 

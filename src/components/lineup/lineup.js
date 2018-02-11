@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './lineup.css'
+import './lineup.css'
 import Tshirt from '../tshirt'
 
 const Lineup = (props) => {

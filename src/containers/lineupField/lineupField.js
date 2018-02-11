@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getLineup, getLineupSuccess } from './actions';
 import Field from '../../components/field'
 import Lineup from '../../components/lineup'
-import styles from './lineupField.css';
+import './lineupField.css';
 
 class LineupField extends Component {
 
@@ -33,21 +33,30 @@ class LineupField extends Component {
       var dateString = lastUpdated && (`${lastUpdated.getUTCHours()}:${lastUpdated.getUTCMinutes()}:${lastUpdated.getUTCSeconds()} - ${lastUpdated.getUTCDate()}/${lastUpdated.getUTCMonth()+1}/${lastUpdated.getUTCFullYear()}`);
       return (
         <div>
+          {!data && !this.props.lineup.error &&
+            <div className="fieldLineupContainer-Alternative">Loading...</div>
+          }
           {data &&
             <div>
-              <h3 className="teamName ">{data.team}</h3>
+              <h3 className="teamName">{data.team}</h3>
               <div className="fieldLineupContainer">
-                <div className="fieldLineupContainerItem">
+                <div className="fieldLineupContainer-Item">
                   <Field></Field>
                 </div>
-                <div className="fieldLineupContainerItem">
-                  <Lineup className="fieldLineupContainerItem"
+                <div className="fieldLineupContainer-Item">
+                  <Lineup
                           formation={data.formation}
                           players={data.players}>
                   </Lineup>
                 </div>
               </div>
               <div className="lastUpdated">Last Updated: {dateString}</div>
+            </div>
+          }
+          {!data && this.props.lineup.error &&
+            <div className="fieldLineupContainer-Alternative">
+              Initial fetch failed.
+              <button onClick={this.props.getLineup}>Retry</button>
             </div>
           }
         </div>

@@ -7,7 +7,7 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case INITIAL_LINEUP_FETCHING:
-      return {...state, loading: true };
+      return {...state, loading: true, error: null, data: null };
     case INITIAL_LINEUP_RECEIVED:
       return {...state, loading: false, data: action.payload, lastUpdated: new Date() };
     case INITIAL_LINEUP_FAILED:
