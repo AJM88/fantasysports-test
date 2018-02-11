@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk'
-import Home from '../home'
+import LineUpField from '../lineUpField'
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -16,5 +16,5 @@ it('renders without crashing', () => {
     store,
   };
 
-  shallow(<Home />, { context });
+  shallow(<LineUpField />, { context });
 });

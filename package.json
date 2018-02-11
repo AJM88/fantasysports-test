@@ -2,10 +2,18 @@
   "name": "fantasysports-test",
   "version": "0.1.0",
   "private": true,
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
+  },
   "dependencies": {
+    "axios": "^0.17.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "history": "^4.7.2",
+    "pusher-js": "^4.2.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -17,12 +25,19 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "build": "npm run build-css && react-scripts build",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "redux-mock-store": "^1.5.1"
+    "node-sass": "^4.7.2",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.2",
+    "redux-mock-store": "^1.5.1",
+    "sass-loader": "^6.0.6"
   }
 }

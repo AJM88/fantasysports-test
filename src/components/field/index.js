@@ -1,8 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import Field from './field';
 
-export default(props) => (
-  <div>
-    Field component
-  </div>
-);
+export default Field;

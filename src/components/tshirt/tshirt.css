@@ -1,0 +1,31 @@
+.tshirt {
+  position: relative;
+  max-height: 80px;
+  max-width: 80px;
+  min-height: 30px;
+  min-width: 30px;
+  width: 13vw;
+  height: 13vw;
+  margin: auto; }
+  @media screen and (max-width: 320px) {
+    .tshirt {
+      width: 70px;
+      height: 70px; } }
+  .tshirt img {
+    position: absolute;
+    max-width: 80px;
+    min-width: 30px;
+    width: 13vw; }
+    @media screen and (max-width: 320px) {
+      .tshirt img {
+        width: 70px; } }
+  .tshirt-number {
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    margin-top: 30%; }
+
+.player-name {
+  text-align: center;
+  margin-top: 5px; }

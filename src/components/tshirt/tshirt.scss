@@ -1,0 +1,44 @@
+$max-tshirt-size: 80px;
+$min-tshirt-size: 30px;
+$width: 13vw;
+$mobileWidth: 70px;
+
+.tshirt {
+  position: relative;
+  max-height: $max-tshirt-size;
+  max-width: $max-tshirt-size;
+  min-height: $min-tshirt-size;
+  min-width: $min-tshirt-size;
+  width: $width;
+  height: $width;
+  margin: auto;
+
+  @media screen and (max-width: 320px) {
+    width: $mobileWidth;
+    height: $mobileWidth;
+  }
+
+  & img {
+    position: absolute;
+    max-width: $max-tshirt-size;
+    min-width: $min-tshirt-size;
+    width: $width;
+
+    @media screen and (max-width: 320px) {
+      width: $mobileWidth;
+    }
+  }
+
+  &-number {
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    margin-top: 30%;
+  }
+}
+
+.player-name {
+  text-align: center;
+  margin-top: 5px;
+}
