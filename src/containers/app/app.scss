@@ -1,0 +1,14 @@
+.nav {
+  background: lightgray;
+  padding: 15px;
+  text-align: center;
+
+  &-item {
+      margin: 10px;
+      border: 1px solid darkgrey;
+      padding: 5px;
+      text-decoration: none;
+      background: darkgray;
+      color: white;
+  }
+}
